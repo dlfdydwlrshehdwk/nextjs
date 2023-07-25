@@ -2,10 +2,10 @@
 
 import { useRouter } from 'next/navigation'
 
-export default function DetailLink(){
+export default function DetailLink(props){
     let router = useRouter()
     return(
-        <button onClick={()=>{ router.push('/list') }}>버튼</button>
+        <button onClick={()=>{ router.push('/edit/' + props.id) }}>수정하기</button>
         // router 다양한 기능들
         // router.push('/어쩌구') /어쩌구로 이동
         // router.back() 뒤로가기

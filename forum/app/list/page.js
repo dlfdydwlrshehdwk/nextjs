@@ -5,7 +5,8 @@ import DetailLink from './DetailLink'
 export default async function List(){
 
     const db = (await connectDB).db('forum')
-    let result = await db.collection('post').find().toArray()
+    // 역배열해놨음 - 최신이 가장 위여야 되기때문!
+    let result = await db.collection('post').find().sort({'_id' : -1}).toArray()
 
     console.log(result)
 
@@ -17,7 +18,7 @@ export default async function List(){
                         <Link href={'/detail/' + x._id}>
                             <h4>{x.title}</h4>
                         </Link>
-                        <DetailLink />
+                        <DetailLink id={x._id}/>
                         <p>{x.content}</p>
                     </div>
                 )    

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import './globals.css'
 // import { Inter } from 'next/font/google'
 
@@ -13,7 +14,30 @@ export default function RootLayout({ children }) {
     <html lang="ko">
       <body
       //  className={inter.className}
-       >{children}</body>
+       >
+        <header>
+          <nav className='nav'>
+            <div className='logo'>
+              <Link href='/'>
+                <img src='../images/logo.png'/>
+              </Link>
+            </div>
+            <div>
+              <ul>
+                <li>
+                  <Link href='/list'>글목록</Link>
+                </li>
+                <li>
+                  <Link href='/write'>글쓰기</Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+
+
+        
+        {children}</body>
     </html>
   )
 }
