@@ -88,3 +88,8 @@ header {
 .fe_forum_sec h4{
   margin-bottom: 10px;
 }
+
+.list-item{
+  opacity: 1;
+  transition: all 1s;
+}

@@ -1,0 +1,27 @@
+/* global.css */
+html, body, h1, h2, h3, h4, ul, li{
+  margin: 0;
+  padding: 0;
+}
+nav {
+  height: 100px;
+  background-color: skyblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+   font-size: 48px;
+   font-weight: bold;
+   color : white;
+}
+nav > div{
+  padding: 0 10px;
+}
+nav ul {
+  display: flex;
+}
+li { 
+  list-style : none;
+  padding: 0 5px;
+}

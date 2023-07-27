@@ -12,7 +12,7 @@ export default async function Home() {
   // 갯수 몇개만 가져오기
   let result3 = await db.collection('post').find().sort({'_id': -1}).limit(5).toArray()
 
-  console.log(result3)
+  // console.log(result3)
   return (
     <>
       <h1>프론트엔드 개발자 하고싶다</h1>
@@ -25,7 +25,7 @@ export default async function Home() {
             {
               result3.map((x,i)=>
                 <li key={i}>
-                  <Link href={'/detail/' + x._id}>
+                  <Link href={'/detail/' + x._id.toString()}>
                     {x.title}
                   </Link>
                 </li>

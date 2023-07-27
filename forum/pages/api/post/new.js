@@ -5,7 +5,7 @@ export default async function handler(요청, 응답){
     
     if(요청.method == 'POST'){
 
-        console.log(요청.body)
+        // console.log(요청.body)
         if(요청.body.title == ''){
             return 응답.status(500).json('제목써라')
         }

@@ -5,7 +5,7 @@ export default async function Detail(props){
 
     const db = (await connectDB).db('forum')
     let result = await db.collection('post').findOne({ _id : new ObjectId(props.params.asd)})
-    console.log(props.params.asd)
+    // console.log(props.params.asd)
 
     return(
         <div>
