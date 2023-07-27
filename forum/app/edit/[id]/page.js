@@ -4,7 +4,7 @@ import { ObjectId } from 'mongodb'
 export default async function Edit(props){
 
     const db = (await connectDB).db('forum')
-    let result = await db.collection('post').findOne({ _id : new ObjectId(props.params.id)})
+    let result = await db.collection('post').findOne({ _id : new ObjectId(props.params.id.toString())})
 
     // await db.collection('post').updateOne({ 수정할게시물정보 }, { $set : { 수정할내용 } })
     // await db.collection('post').updateOne({ 수정할정보 }, { $set : { 수정할내용 } })
