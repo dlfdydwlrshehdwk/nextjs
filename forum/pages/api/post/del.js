@@ -8,7 +8,7 @@ export default async function handler(요청, 응답){
         try{
             const db = (await connectDB).db('forum')
             let result = db.collection('post').deleteOne(
-                {_id : new ObjectId(요청.body.toString()) }
+                {_id : new ObjectId(요청.body) }
                 )
             응답.status(200).json('삭제완료')
         }
