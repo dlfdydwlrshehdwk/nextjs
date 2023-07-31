@@ -7,7 +7,9 @@ import Regi from './regi'
 export default async function Register() {
 
     let db = (await connectDB).db('forum');
+    let user = db.collection('user_cred')
     let result = await db.collection('user_cred').find().toArray()
+    let result2 = await user.find({},{ name : 0 }).toArray()
 
     // console.log('db',result)
     // -> db [
@@ -18,8 +20,8 @@ export default async function Register() {
     //       password: '$2b$10$mwpRlAoyDobjCtXIYvjWte..MJyJTUM/w29dCI2IYYToBneRJTEyW'
     //     }
     //   ]
-    
+
     return (
-        <Regi db={result} />
+        <Regi db={result} dd={result2} />
     )
   }

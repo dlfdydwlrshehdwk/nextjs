@@ -93,3 +93,6 @@ header {
   opacity: 1;
   transition: all 1s;
 }
+.name, .mail, .pw{
+  display: inline-block;
+}
