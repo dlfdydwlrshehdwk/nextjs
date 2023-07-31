@@ -13,8 +13,7 @@ export default function Regi(props){
     let [id,setId] = useState('')
 
     let result = props.db
-
-    // console.log(result)
+    console.log(result)
     // [
     //     {
     //       _id: '64c6df8120349bd661f0dd04',
@@ -31,15 +30,17 @@ export default function Regi(props){
 
     // 아이디가 비어있으면 ... + 아이디 중복체크
     function asd(a){
-            a == '' ? setId('아이디를입력') : setId('')
+            a == '' ? setId('아이디를입력하셈') : qwe()
 
-            // 이거아닌거같은데 하씨팔 감이안옴
-            // 아니 find({},{name : 1 }) 이거왜안되냐고씨이팔씨발씨발
-            for(let i = 0; i<result.length; i++){
-                result[i].name == a ? setId(
-                    '중복된아이디입니다'
-                ) : null
-            }
+            function qwe(){
+                // 이거아닌거같은데 하씨팔 감이안옴
+                // 아니 find({},{name : 1 }) 이거왜안되냐고씨이팔씨발씨발
+                for(let i = 0; i<result.length; i++){
+                    result[i].name == a ? setId(
+                        '중복된아이디입니다'
+                        ) : setId('사용가능한아이디입니다.')
+                    }
+                }
     }
 
 
@@ -59,10 +60,10 @@ export default function Regi(props){
             onBlur={(e)=>{
                 // e.target.value == '' ? 
                 // setId('아이디를입력하세요') : setId('')
-                asd(e.target.value)
             }}
             onChange={(e)=>{
-                idcheck(e.target.value)
+                asd(e.target.value)
+                // idcheck(e.target.value)
             }}/> 
             <span className='blankname'>{id}</span>
             </div>
@@ -74,7 +75,11 @@ export default function Regi(props){
             <input className='mail' name="email" type="text" placeholder="이메일" />
             <span className='blankemail'></span>
             </div>
-            <button type="submit">가입요청</button>
+            {
+                id == '사용가능한아이디입니다.' ?
+                <button type="submit">가입요청</button>
+                : <button type="submit">가입불가야</button>
+            }
           </form>
       </div>
     )
