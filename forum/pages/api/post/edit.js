@@ -16,7 +16,7 @@ export default async function handler(요청,응답){
 
         // console.log('222',요청.body)
         let result = db.collection('post').updateOne(
-            {_id : new ObjectId(요청.body._id) },
+            {_id : new ObjectId(요청.body._id.toString()) },
             {$set : 바꿀거}
         )
         응답.redirect(302,'/list')

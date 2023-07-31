@@ -41,7 +41,7 @@ export default function ListItem(props){
                         // fetch('/api/test?methods=DELETE&body=' + x._id)
 
                         // URL parameter 사용
-                        fetch('/api/abc/' + x._id.toString())
+                        fetch('/api/abc/' + x._id)
                         .then(
                             // 새로고침
                             location.reload()
